@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lucas Fernandes de Magalh?es" />
+  <title>Aula 1</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="index_files/reveal.js-3.3.0.1/css/theme/simple.css" id="theme">
+
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+    <link rel="stylesheet" href="styles.css"/>
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="index_files/kePrint-0.0.1/kePrint.js"></script>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">Aula 1</h1>
+  <h1 class="subtitle">Introdu??o ao R</h1>
+    <h2 class="author">Lucas Fernandes de Magalh?es</h2>
+</section>
+
+<section id="o-que-o-r" class="slide level2">
+<h2>O que ? o R?</h2>
+<p>   </p>
+<p>O R ? uma linguagem de programa??o voltada, sobretudo, para a estat?stica e produ??o de gr?ficos. No nosso caso, utilizaremos essa linguagem para a automatiza??o de rotinas.</p>
+<p><span class="math inline">\(~\)</span></p>
+<p>E o que ? uma linguagem de programa??o? De maneira superficial, ? um conjunto de regras sem?nticas e sint?ticas (uma linguagem, portanto) que nos permite passar instru??es para um computador.</p>
+</section>
+<section id="vantagens-de-se-utilizar-o-r" class="slide level2">
+<h2>Vantagens de se utilizar o R</h2>
+<p>   </p>
+<ol type="1">
+<li><p>Software livre e de c?digo aberto <span class="math inline">\(~\)</span></p></li>
+<li><p>Compatibilidade com diversos sistemas operacionais <span class="math inline">\(~\)</span></p></li>
+<li><p>Suporta extens?es (pacotes) <span class="math inline">\(~\)</span></p></li>
+<li><p>Reprodutibilidade <span class="math inline">\(~\)</span></p></li>
+<li><p>Comunidade engajada</p></li>
+</ol>
+</section>
+<section id="r-vs.-excel" class="slide level2">
+<h2>R vs. Excel</h2>
+<p>   </p>
+<center>
+<img src="gif_hulk2.gif" width = "700px" height="500px" />
+</center>
+</section>
+<section id="onde-pesquisar" class="slide level2">
+<h2>Onde pesquisar?</h2>
+<p>   </p>
+<p>Caso surja alguma d?vida, seguem abaixo algumas fontes de consulta:</p>
+<p><a href="http://r4ds.had.co.nz/index.html">R for Data Science</a></p>
+<p><a href="http://www.cookbook-r.com/">Cookbook for R</a></p>
+<p><a href="http://adv-r.hadley.nz/">Advanced R</a></p>
+<p><a href="http://pt.stackoverflow.com/">Stackoverflow</a></p>
+<p><a href="http://www.ufrgs.br/wiki-r/index.php?title=Bem-vindo_%C3%A0_Wiki_R">Wiki R</a></p>
+<p><a href="http://material.curso-r.com/rbase/">Curso R</a></p>
+<p><a href="http://cran.r-project.org/doc/contrib/Landeiro-Introducao.pdf">Introdu??o ao R</a></p>
+</section>
+<section><section id="rstudio" class="title-slide slide level1"><h1>RStudio</h1></section><section id="o-que-o-rstudio" class="slide level2">
+<h2>O que ? o RStudio</h2>
+<p>   </p>
+<div style="float: left; width: 50%;">
+<p style="text-align:center">
+<b> R </b>
+</p>
+<center>
+<img src="motor.jpg" width = "60%" height="300px" />
+</center>
+</div>
+<div style="float: right; width: 50%;">
+<p style="text-align:center">
+<b> RStudio </b>
+</p>
+<center>
+<img src="carroceria.jpg" width = "60%" height="300px" />
+</center>
+</div>
+</section><section id="conhecendo-o-rstudio" class="slide level2">
+<h2>Conhecendo o RStudio</h2>
+<center>
+<img src="R_1.PNG" width = "700px" height="500px" />
+</center>
+</section><section id="conhecendo-o-rstudio-1" class="slide level2">
+<h2>Conhecendo o RStudio</h2>
+<center>
+<img src="R_2.PNG" width = "700px" height="500px" />
+</center>
+</section><section id="conhecendo-o-rstudio-2" class="slide level2">
+<h2>Conhecendo o RStudio</h2>
+<center>
+<img src="R_3.PNG" width = "700px" height="500px" />
+</center>
+<p>#Primeiros passos no R</p>
+</section><section id="como-nos-imaginamos-ao-programar" class="slide level2">
+<h2>Como nos imaginamos ao programar</h2>
+<p>   </p>
+<div data-align="center">
+<iframe width="800" height="500" src="https://www.youtube.com/embed/HluANRwPyNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+</section><section id="executando-cdigos" class="slide level2">
+<h2>Executando c?digos</h2>
+<p>   </p>
+<p>Para executar c?digos no RStudio, basta digit?-los na janela “Editor” e apertar o bot?o Run ou utilizar o atalho “Ctrl + enter”.</p>
+<p>Para executar apenas uma parte espec?fica do c?digo ou mais de uma linha, basta selecionar e depois rodar o c?digo.</p>
+<center>
+<img src="executar_codigo.png" width = "500px" height="300px" />
+</center>
+</section><section id="comentando-os-cdigos" class="slide level2">
+<h2>Comentando os c?digos</h2>
+<p>   </p>
+<p>? uma boa pr?tica comentar os c?digos criados, sobretudo, as linhas que envolvem opera??es mais complexas.</p>
+<p>Para realizar isso, basta incluir um “#” antes do coment?rio.</p>
+<center>
+<img src="meme_comentarios.jpg" width = "600px" height="400px" />
+</center>
+</section><section id="operaes-matemticas" class="slide level2">
+<h2>Opera??es Matem?ticas</h2>
+<p>   </p>
+<p>O R pode ser utilizado como uma calculadora</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="dv">1</span><span class="op">+</span><span class="dv">1</span> <span class="co">#Soma</span></a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="dv">4-2</span> <span class="co">#Subtra??o</span></a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">(<span class="dv">3</span><span class="op">*</span>(<span class="dv">2</span><span class="op">+</span><span class="dv">3</span>))<span class="op">/</span><span class="dv">5</span> <span class="co">#Multiplica??o e divis?o</span></a></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+</section><section id="funes" class="slide level2">
+<h2>Fun??es</h2>
+<p>   </p>
+<p>O R traz consigo uma s?rie de fun??es que automatizam a execu??o de algumas rotinas.</p>
+<p>Se houver d?vidas a respeito da fun??o, basta digitar help(nome_da_fun??o) ou ?nome_da_fun??o</p>
+<p>A fun??o no R ? sempre um nome acompanhado de par?nteses. Dentro dos par?nteses s?o inseridos os argumentos da fun??o</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">round</span>(<span class="dt">x=</span><span class="fl">45.222</span>, <span class="dt">digits=</span><span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 45.22</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">0</span>, <span class="dt">to=</span><span class="dv">20</span>, <span class="dt">by=</span><span class="dv">2</span>)</a></code></pre></div>
+<pre><code>##  [1]  0  2  4  6  8 10 12 14 16 18 20</code></pre>
+</section><section id="funes-1" class="slide level2">
+<h2>Fun??es</h2>
+<p>   </p>
+<p>Para simplificar a escrita da fun??o, ? poss?vel “passar” direto os valores dos argumentos para a fun??o sem especific?-los, caso eles estejam na ordem correta.</p>
+<p>   </p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">round</span>(<span class="fl">45.222</span>, <span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 45.22</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">2</span>)</a></code></pre></div>
+<pre><code>##  [1]  0  2  4  6  8 10 12 14 16 18 20</code></pre>
+</section><section id="criao-de-objetos" class="slide level2">
+<h2>Cria??o de objetos</h2>
+<p>   </p>
+<p>Para criar objetos no R, devemos utilizar o sinal de atribui??o &lt;-. Para facilitar a digita??o desse sinal, podemos usar o atalho “Alt-”.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">x &lt;-<span class="st"> </span><span class="dv">1</span></a>
+<a class="sourceLine" id="cb15-2" title="2">curso &lt;-<span class="st"> &quot;EJEF&quot;</span></a>
+<a class="sourceLine" id="cb15-3" title="3"></a>
+<a class="sourceLine" id="cb15-4" title="4">x <span class="co">#Executando os objetos</span></a></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1">curso</a></code></pre></div>
+<pre><code>## [1] &quot;EJEF&quot;</code></pre>
+</section><section id="criao-de-objetos-1" class="slide level2">
+<h2>Cria??o de objetos</h2>
+<p>   </p>
+<p>Para a cria??o dos nomes dos objetos, devemos observar algumas regras:</p>
+<p>Espa?ar os nomes utilizando: . (ponto), _ (underline), ou caixa alta:</p>
+<ul>
+<li>arq.cent</li>
+<li>arq_cent</li>
+<li>arqCent</li>
+</ul>
+<p><span class="math inline">\(~\)</span> Evitar acentos ou caracteres especiais:</p>
+<ul>
+<li>cinc?o</li>
+<li>cai/xa</li>
+<li>a?a?</li>
+</ul>
+<p><span class="math inline">\(~\)</span> Proibido usar nomes reservados: TRUE, FALSE, T, F, etc. (Para checar os nomes reservados, usar ?reserved)</p>
+</section><section id="criao-de-objetos-2" class="slide level2">
+<h2>Cria??o de objetos</h2>
+<p>   </p>
+<p>Da mesma forma que o R nos permite conduzir opera??es matem?ticas, tamb?m ? poss?vel realizar opera??es utilizando os pr?prios objetos j? criados</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">x &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb19-2" title="2">y &lt;-<span class="st"> </span><span class="fl">10.2</span></a>
+<a class="sourceLine" id="cb19-3" title="3">z &lt;-<span class="st"> </span>x<span class="op">+</span>y</a>
+<a class="sourceLine" id="cb19-4" title="4">x<span class="op">*</span>y</a></code></pre></div>
+<pre><code>## [1] 51</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1">y<span class="op">/</span>x</a></code></pre></div>
+<pre><code>## [1] 2.04</code></pre>
+</section><section id="criao-de-objetos-3" class="slide level2">
+<h2>Cria??o de objetos</h2>
+<p>   </p>
+<p>Quando os objetos s?o criados, eles aparecem no “Global Environment” ou ambiente</p>
+<center>
+<img src="criacao_objetos.png" width = "80%" height="400px" />
+</center>
+</section><section id="removendo-objetos" class="slide level2">
+<h2>Removendo objetos</h2>
+<p>   </p>
+<p>? poss?vel visualizar os objetos que est?o carregados no ambiente com a fun??o ls() e remov?-los usando rm()</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="kw">ls</span>()</a></code></pre></div>
+<pre><code>## [1] &quot;curso&quot; &quot;x&quot;     &quot;y&quot;     &quot;z&quot;</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="kw">rm</span>(x)</a>
+<a class="sourceLine" id="cb25-2" title="2"><span class="kw">ls</span>() <span class="co">#Aparecer?o todos os objetos menos x</span></a></code></pre></div>
+<pre><code>## [1] &quot;curso&quot; &quot;y&quot;     &quot;z&quot;</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="kw">rm</span>(<span class="dt">list=</span><span class="kw">ls</span>()) <span class="co">#Para remover todos os objetos</span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="kw">ls</span>()</a></code></pre></div>
+<pre><code>## character(0)</code></pre>
+</section><section id="estruturas-dos-objetos" class="slide level2">
+<h2>Estruturas dos objetos</h2>
+<p>   </p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;font-weight: bold;background-color: #FFF8DC !important;border-right:1px solid;">
+Estrutura
+</th>
+<th style="text-align:left;width: 30em; background-color: #FFF8DC !important;">
+Defini..o
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;font-weight: bold;background-color: #FFF8DC !important;border-right:1px solid;">
+Escalar
+</td>
+<td style="text-align:left;width: 30em; background-color: #FFF8DC !important;">
+Basicamente, ? um vetor at?mico com um ?nico elemento
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;background-color: #FFF8DC !important;border-right:1px solid;">
+Vetor at?mico
+</td>
+<td style="text-align:left;width: 30em; background-color: #FFF8DC !important;">
+? a estrutura mais b?sica do R. Consiste em uma sequ?ncia de elementos de mesmo tipo unidos pela fun??o concatenate c()
+</td>
+</tr>
+<tr>
+<td style="text-align:left;font-weight: bold;background-color: #FFF8DC !important;border-right:1px solid;">
+Data frames
+</td>
+<td style="text-align:left;width: 30em; background-color: #FFF8DC !important;">
+? a estrutura mais utilizada para se armazenar dados no R. Possui duas dimens?es: linhas e colunas. Em outras palavras, ? a boa e velha planilha do excel
+</td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section><section id="estruturas-dos-objetos-1" class="title-slide slide level1"><h1>Estruturas dos objetos</h1></section><section id="vetores-atmicos" class="slide level2">
+<h2>Vetores At?micos</h2>
+<p>   </p>
+<ul>
+<li>Os vetores consistem em uma sequ?ncia de elementos que s?o agrupados pela fun??o concatenate c().</li>
+</ul>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">50</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">23</span>,<span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb29-2" title="2">x </a></code></pre></div>
+<pre><code>## [1]  1  2  4  6 50  3  4 23 12</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Ejef&quot;</span>, <span class="st">&quot;TJMG&quot;</span>, <span class="st">&quot;GEARQ&quot;</span>, <span class="st">&quot;DIRGED&quot;</span>)</a>
+<a class="sourceLine" id="cb31-2" title="2">y</a></code></pre></div>
+<pre><code>## [1] &quot;Ejef&quot;   &quot;TJMG&quot;   &quot;GEARQ&quot;  &quot;DIRGED&quot;</code></pre>
+</section><section id="tipo-de-vetores" class="slide level2">
+<h2>Tipo de vetores</h2>
+<p>   </p>
+<p>Os vetores podem ser de tipos (ou classes) diferentes:</p>
+<ul>
+<li><p>Numeric: 2,3.56,7.10,20</p></li>
+<li><p>Integer: 1,2,3,4,5,6</p></li>
+<li><p>Character: “TJMG”, “DIRGED”</p></li>
+<li><p>Logical: TRUE ou FALSE</p></li>
+</ul>
+<p>Para conferir o tipo de um vetor, basta usar a fun??o class()</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Casa&quot;</span>, <span class="st">&quot;Curso&quot;</span>)</a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="kw">class</span>(x)</a></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+</section><section id="tipo-de-vetores-1" class="slide level2">
+<h2>Tipo de vetores</h2>
+<p>   </p>
+<p>Os vetores n?o podem possuir mais de um tipo. Dessa maneira, se for criado um vetor com mais de um tipo, ele se converter? automaticamente ao tipo mais gen?rico:</p>
+<ul>
+<li>Character &gt; numeric &gt; integer &gt; logical</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>, <span class="ot">TRUE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb35-2" title="2">x</a></code></pre></div>
+<pre><code>## [1] 1 4 1 1 0</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;EJEF&quot;</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb37-2" title="2">y</a></code></pre></div>
+<pre><code>## [1] &quot;EJEF&quot; &quot;1&quot;    &quot;4&quot;    &quot;5&quot;</code></pre>
+</section><section id="tipo-de-vetores-2" class="slide level2">
+<h2>Tipo de vetores</h2>
+<p>   </p>
+<p>Al?m dessa convers?o autom?tica, ? poss?vel for?ar os vetores a assumirem um determinado tipo usando as fun??es as.()</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb39-2" title="2"><span class="kw">as.numeric</span>(x)</a></code></pre></div>
+<pre><code>## [1] 1 1 0</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">7</span>,<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb41-2" title="2"><span class="kw">as.character</span>(y)</a></code></pre></div>
+<pre><code>## [1] &quot;1&quot; &quot;4&quot; &quot;5&quot; &quot;7&quot; &quot;7&quot; &quot;8&quot;</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1">z &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;EJEF&quot;</span>, <span class="st">&quot;TJMG&quot;</span>, <span class="st">&quot;DIRGED&quot;</span>)</a>
+<a class="sourceLine" id="cb43-2" title="2"><span class="kw">as.numeric</span>(z)</a></code></pre></div>
+<pre><code>## Warning: NAs introduzidos por coerÃ§Ã£o</code></pre>
+<pre><code>## [1] NA NA NA</code></pre>
+</section><section id="criando-vetores-com-funes" class="slide level2">
+<h2>Criando vetores com fun??es</h2>
+<p>   </p>
+<p>Ao inv?s de digitar um n?mero de cada vez, existem algumas fun??es que facilitam a cria??o de vetores num?ricos</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb46-2" title="2"></a>
+<a class="sourceLine" id="cb46-3" title="3">x &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="dv">20</span></a>
+<a class="sourceLine" id="cb46-4" title="4"></a>
+<a class="sourceLine" id="cb46-5" title="5">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">1</span>, <span class="dt">to=</span><span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb46-6" title="6"></a>
+<a class="sourceLine" id="cb46-7" title="7">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;EJEF&quot;</span>, <span class="st">&quot;DIRGED&quot;</span>, <span class="st">&quot;EJEF&quot;</span>, <span class="st">&quot;DIRGED&quot;</span>, <span class="st">&quot;EJEF&quot;</span>,</a>
+<a class="sourceLine" id="cb46-8" title="8">       <span class="st">&quot;DIRGED&quot;</span>, <span class="st">&quot;EJEF&quot;</span>, <span class="st">&quot;DIRGED&quot;</span>, <span class="st">&quot;EJEF&quot;</span>, <span class="st">&quot;DIRGED&quot;</span>)</a>
+<a class="sourceLine" id="cb46-9" title="9"></a>
+<a class="sourceLine" id="cb46-10" title="10">y &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;EJEF&quot;</span>, <span class="st">&quot;DIRGED&quot;</span>), <span class="dt">times=</span><span class="dv">5</span>)</a></code></pre></div>
+</section><section id="operaes-com-vetores" class="slide level2">
+<h2>Opera??es com vetores</h2>
+<p>   </p>
+<p>Assim como realizamos contas matem?ticas com grandezas escalares, tamb?m ? poss?vel fazer o mesmo com vetores:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1">x &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dt">from=</span><span class="dv">4</span>,<span class="dt">to=</span><span class="dv">50</span>,<span class="dt">by=</span><span class="fl">1.4</span>)</a>
+<a class="sourceLine" id="cb47-2" title="2">x<span class="op">*</span><span class="dv">2</span></a></code></pre></div>
+<pre><code>##  [1]  8.0 10.8 13.6 16.4 19.2 22.0 24.8 27.6 30.4 33.2 36.0 38.8 41.6 44.4
+## [15] 47.2 50.0 52.8 55.6 58.4 61.2 64.0 66.8 69.6 72.4 75.2 78.0 80.8 83.6
+## [29] 86.4 89.2 92.0 94.8 97.6</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1"><span class="kw">sum</span>(x)</a></code></pre></div>
+<pre><code>## [1] 871.2</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="kw">mean</span>(x)</a></code></pre></div>
+<pre><code>## [1] 26.4</code></pre>
+</section><section id="operaes-com-vetores-1" class="slide level2">
+<h2>Opera??es com vetores</h2>
+<p>   </p>
+<p>A maior parte das fun??es do R s?o “vetorizadas”, isto ?, elas se aplicam a vetores:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;TJMG - EJEF&quot;</span>, <span class="st">&quot;TJMG - DIRDEP&quot;</span>, <span class="st">&quot;TJSP - COARQ&quot;</span>)</a>
+<a class="sourceLine" id="cb53-2" title="2"><span class="kw">str_split</span>(<span class="st">&quot;TJMG - coarq&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot; - &quot;</span>, <span class="dt">simplify =</span> T)</a></code></pre></div>
+<pre><code>##      [,1]   [,2]   
+## [1,] &quot;TJMG&quot; &quot;coarq&quot;</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb55-1" title="1"><span class="kw">str_split</span>(x,<span class="dt">pattern =</span> <span class="st">&quot; - &quot;</span>, <span class="dt">simplify =</span> T )</a></code></pre></div>
+<pre><code>##      [,1]   [,2]    
+## [1,] &quot;TJMG&quot; &quot;EJEF&quot;  
+## [2,] &quot;TJMG&quot; &quot;DIRDEP&quot;
+## [3,] &quot;TJSP&quot; &quot;COARQ&quot;</code></pre>
+</section><section id="manipulando-vetores" class="slide level2">
+<h2>Manipulando vetores</h2>
+<p>   </p>
+<p>Para se identificar um elemento dentro do vetor, deve-se usar colchetes [] e incluir dentro deles a posi??o desejada</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;EJEF&quot;</span>, <span class="st">&quot;DIRDEP&quot;</span>, <span class="st">&quot;COARQ&quot;</span>, <span class="st">&quot;COVAD&quot;</span>)</a>
+<a class="sourceLine" id="cb57-2" title="2">x[<span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;DIRDEP&quot;</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb59-1" title="1">x[<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;DIRDEP&quot; &quot;COARQ&quot;  &quot;COVAD&quot;</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb61-1" title="1">x[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</a></code></pre></div>
+<pre><code>## [1] &quot;EJEF&quot;  &quot;COARQ&quot;</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb63-1" title="1">x[<span class="kw">c</span>(<span class="ot">TRUE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>, <span class="ot">FALSE</span>)] <span class="co">#Vetor Booleano</span></a></code></pre></div>
+<pre><code>## [1] &quot;EJEF&quot;  &quot;COARQ&quot;</code></pre>
+</section><section id="manipulando-vetores-1" class="slide level2">
+<h2>Manipulando vetores</h2>
+<p>   </p>
+<p>Podemos tamb?m excluir elementos de um vetor, incluindo um sinal negativo antes da posi??o dentro dos colchetes:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;EJEF&quot;</span>, <span class="st">&quot;DIRDEP&quot;</span>, <span class="st">&quot;COARQ&quot;</span>, <span class="st">&quot;COVAD&quot;</span>)</a>
+<a class="sourceLine" id="cb65-2" title="2">x[<span class="op">-</span><span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;EJEF&quot;  &quot;COARQ&quot; &quot;COVAD&quot;</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1">x[<span class="op">-</span>(<span class="dv">2</span><span class="op">:</span><span class="dv">4</span>)]</a></code></pre></div>
+<pre><code>## [1] &quot;EJEF&quot;</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb69-1" title="1">x[<span class="op">-</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)]</a></code></pre></div>
+<pre><code>## [1] &quot;DIRDEP&quot; &quot;COVAD&quot;</code></pre>
+</section><section id="manipulando-vetores-2" class="slide level2">
+<h2>Manipulando vetores</h2>
+<p>   </p>
+<p>Para unir dois vetores ou acrescentar novas informa??es, basta usar novamente a fun??o c()</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb71-1" title="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb71-2" title="2">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb71-3" title="3">z &lt;-<span class="st"> </span><span class="kw">c</span>(x,y)</a>
+<a class="sourceLine" id="cb71-4" title="4">z</a></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb73-1" title="1">k &lt;-<span class="st"> </span><span class="kw">c</span>(x,y,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>)</a>
+<a class="sourceLine" id="cb73-2" title="2">k</a></code></pre></div>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15</code></pre>
+</section><section id="data-frames-ou-tabelas" class="slide level2">
+<h2>Data Frames (ou tabelas)</h2>
+<p>   </p>
+<p>Os Data Frames s?o tabelas que cont?m linhas e colunas. Para cri?-las, devemos usar a fun??o data.frame</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1">x &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">Servidor=</span><span class="kw">c</span>(<span class="st">&quot;Lucas&quot;</span>, <span class="st">&quot;Daniela&quot;</span>, <span class="st">&quot;Maric?lia&quot;</span>,</a>
+<a class="sourceLine" id="cb75-2" title="2">                           <span class="st">&quot;Lorrany&quot;</span>, <span class="st">&quot;Bruno&quot;</span>, <span class="st">&quot;Vantuir&quot;</span>,</a>
+<a class="sourceLine" id="cb75-3" title="3">                           <span class="st">&quot;Fernando&quot;</span>, <span class="st">&quot;Andr?&quot;</span>),</a>
+<a class="sourceLine" id="cb75-4" title="4">                <span class="dt">Setor=</span><span class="kw">c</span>(<span class="st">&quot;Covad&quot;</span>, <span class="st">&quot;Gearq&quot;</span>, <span class="st">&quot;Covad&quot;</span>, <span class="st">&quot;Gearq&quot;</span>,</a>
+<a class="sourceLine" id="cb75-5" title="5">                        <span class="st">&quot;Gearq&quot;</span>, <span class="st">&quot;Covad&quot;</span>, <span class="st">&quot;Dirged&quot;</span>, <span class="st">&quot;Dirged&quot;</span>),</a>
+<a class="sourceLine" id="cb75-6" title="6">                <span class="dt">Dia_aniversario=</span><span class="kw">c</span>(<span class="dv">28</span>,<span class="dv">15</span>,<span class="dv">13</span>,<span class="dv">22</span>,<span class="dv">27</span>,<span class="dv">12</span>,<span class="dv">31</span>,<span class="dv">2</span>),</a>
+<a class="sourceLine" id="cb75-7" title="7">                <span class="dt">stringsAsFactors =</span> F)</a></code></pre></div>
+</section><section id="visualizando-data-frames" class="slide level2">
+<h2>Visualizando Data frames</h2>
+<p>   </p>
+<p>? poss?vel visualizar o Data Frame criado de diversas formas:</p>
+<ul>
+<li><p>Head(x,n=2)</p></li>
+<li><p>Tail(x, n=3)</p></li>
+<li><p>View(x)</p></li>
+<li><p>str(x)</p></li>
+<li><p>ncol(x)</p></li>
+<li><p>nrow(x)</p></li>
+</ul>
+</section><section id="manipulando-data-frames" class="slide level2">
+<h2>Manipulando Data Frames</h2>
+<p>   </p>
+<ul>
+<li><p>Similar aos vetores, para identificar elementos dentro de um Data Frame, devemos utilizar colchetes [].</p></li>
+<li><p>No entanto, no caso dos Data Frames, os colchetes devem ser supridos com duas informa??es, uma para a linha e a outra para a coluna.</p></li>
+<li><p>A informa??o da linha deve vir antes da v?rgula e a da coluna ap?s.</p></li>
+</ul>
+<center>
+<img src="linha_coluna.png" width = "300px" height="200px" />
+</center>
+</section><section id="manipulando-data-frames-1" class="slide level2">
+<h2>Manipulando Data Frames</h2>
+<p>   </p>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" title="1">x[<span class="dv">4</span>,<span class="dv">3</span>] <span class="co">#Dia de anivers?rio da Lorrany</span></a></code></pre></div>
+<pre><code>## [1] 22</code></pre>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" title="1">x[<span class="dv">6</span>,<span class="dv">2</span>] <span class="co">#Setor do Vantuir</span></a></code></pre></div>
+<pre><code>## [1] &quot;Covad&quot;</code></pre>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" title="1">x[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>,<span class="dv">1</span>] <span class="co">#Selecionando m?ltiplas linhas</span></a></code></pre></div>
+<pre><code>## [1] &quot;Lucas&quot;     &quot;Daniela&quot;   &quot;Maric?lia&quot; &quot;Lorrany&quot;</code></pre>
+</section><section id="manipulando-data-frames-2" class="slide level2">
+<h2>Manipulando Data Frames</h2>
+<p>   </p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1">x[<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>] <span class="co">#Selecionando m?ltiplas linhas e colunas</span></a></code></pre></div>
+<pre><code>##   Setor Dia_aniversario
+## 1 Covad              28
+## 3 Covad              13</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1">x[,<span class="dv">2</span>] <span class="co">#Selecionando uma coluna inteira</span></a></code></pre></div>
+<pre><code>## [1] &quot;Covad&quot;  &quot;Gearq&quot;  &quot;Covad&quot;  &quot;Gearq&quot;  &quot;Gearq&quot;  &quot;Covad&quot;  &quot;Dirged&quot; &quot;Dirged&quot;</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1">x[<span class="dv">1</span>,] <span class="co">#Selecionando uma linha inteira</span></a></code></pre></div>
+<pre><code>##   Servidor Setor Dia_aniversario
+## 1    Lucas Covad              28</code></pre>
+</section><section id="manipulando-data-frames-3" class="slide level2">
+<h2>Manipulando Data Frames</h2>
+<p>   </p>
+<p>Para eliminar linhas ou colunas, o procedimento ? id?ntico ao dos vetores. Basta incluir um sinal negativo na frente da posi??o.</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" title="1">x[<span class="op">-</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>),]</a></code></pre></div>
+<pre><code>##   Servidor  Setor Dia_aniversario
+## 7 Fernando Dirged              31
+## 8    Andr? Dirged               2</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" title="1">x[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dv">-3</span>]</a></code></pre></div>
+<pre><code>##   Servidor Setor
+## 1    Lucas Covad
+## 2  Daniela Gearq</code></pre>
+</section><section id="manipulando-data-frames-4" class="slide level2">
+<h2>Manipulando Data Frames</h2>
+<p>   </p>
+<p>As colunas do Data Frame podem ser selecionadas a partir do s?mbolo $</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" title="1">x<span class="op">$</span>Servidor</a></code></pre></div>
+<pre><code>## [1] &quot;Lucas&quot;     &quot;Daniela&quot;   &quot;Maric?lia&quot; &quot;Lorrany&quot;   &quot;Bruno&quot;     &quot;Vantuir&quot;  
+## [7] &quot;Fernando&quot;  &quot;Andr?&quot;</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" title="1">x<span class="op">$</span>Setor[<span class="dv">4</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;Gearq&quot;</code></pre>
+</section><section id="manipulando-data-frames-5" class="slide level2">
+<h2>Manipulando Data Frames</h2>
+<p>   </p>
+<p>? poss?vel tamb?m “filtrar” o Data Frame a partir dos conte?dos da pr?pria tabela</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" title="1">x[x<span class="op">$</span>Setor<span class="op">==</span><span class="st">&quot;Covad&quot;</span>,]</a></code></pre></div>
+<pre><code>##    Servidor Setor Dia_aniversario
+## 1     Lucas Covad              28
+## 3 Maric?lia Covad              13
+## 6   Vantuir Covad              12</code></pre>
+<p>Entendendo o filtro:</p>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" title="1">x<span class="op">$</span>Setor<span class="op">==</span><span class="st">&quot;Covad&quot;</span></a></code></pre></div>
+<pre><code>## [1]  TRUE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE</code></pre>
+</section><section id="unindo-data-frames" class="slide level2">
+<h2>Unindo Data Frames</h2>
+<p>   </p>
+<p>? poss?vel unir novas linhas e colunas ao Data Frame utilizando as fun??es Rbind e Cbind:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r code"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" title="1">cargo &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;T?cnico Judici?rio&quot;</span>, <span class="st">&quot;Oficial Judici?rio&quot;</span>, <span class="st">&quot;T?cnico Judici?rio&quot;</span>,</a>
+<a class="sourceLine" id="cb100-2" title="2">           <span class="st">&quot;Oficial Judici?rio&quot;</span>, <span class="st">&quot;T?cnico Judici?rio&quot;</span>, <span class="st">&quot;Oficial Judici?rio&quot;</span>,</a>
+<a class="sourceLine" id="cb100-3" title="3">           <span class="st">&quot;T?cnico Judici?rio&quot;</span>, <span class="st">&quot;Oficial Judici?rio&quot;</span>)</a>
+<a class="sourceLine" id="cb100-4" title="4"></a>
+<a class="sourceLine" id="cb100-5" title="5">x &lt;-<span class="st"> </span><span class="kw">cbind</span>(x, cargo) <span class="co">#Sobrescrevendo X, colocando a coluna cargo ? esquerda das j? existentes</span></a>
+<a class="sourceLine" id="cb100-6" title="6"></a>
+<a class="sourceLine" id="cb100-7" title="7"><span class="co">#str(x)</span></a>
+<a class="sourceLine" id="cb100-8" title="8"></a>
+<a class="sourceLine" id="cb100-9" title="9">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Simone&quot;</span>, <span class="st">&quot;Gedoc&quot;</span>, <span class="st">&quot;15&quot;</span>, <span class="st">&quot;Oficial Judici?rio&quot;</span>)</a>
+<a class="sourceLine" id="cb100-10" title="10"></a>
+<a class="sourceLine" id="cb100-11" title="11">x &lt;-<span class="st"> </span><span class="kw">rbind</span>(x, y) <span class="co">#Sobrescrevendo x, colocando a linha y abaixo das j? existentes</span></a>
+<a class="sourceLine" id="cb100-12" title="12"></a>
+<a class="sourceLine" id="cb100-13" title="13"><span class="co">#View(x)</span></a></code></pre></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="index_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="index_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: '100%',
+        height: '100%',
+
+
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'index_files/reveal.js-3.3.0.1/plugin/search/search.js', async: true },
+          { src: 'index_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>

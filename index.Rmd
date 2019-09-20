@@ -1,0 +1,613 @@
+---
+title: Aula 1
+subtitle: Introdu??o ao R
+author: Lucas Fernandes de Magalh?es
+output: 
+  revealjs::revealjs_presentation:
+    self_contained: false
+    reveal_plugins: ["zoom", "search"]
+    css: styles.css
+    theme: default
+    transition: slide
+    progress: true
+    slideNumber: true
+    reveal_options:
+      width: 100%
+      height: 100%
+      
+---
+
+## O que ? o R?
+
+&nbsp;
+&nbsp;
+
+O R ? uma linguagem de programa??o voltada, sobretudo, para a estat?stica e produ??o de gr?ficos. No nosso caso, utilizaremos essa linguagem para a automatiza??o de rotinas. 
+
+$~$
+
+E o que ? uma linguagem de programa??o? De maneira superficial, ? um conjunto de regras sem?nticas e sint?ticas (uma linguagem, portanto) que nos permite passar instru??es para um computador.
+
+
+## Vantagens de se utilizar o R
+
+&nbsp;
+&nbsp;
+
+
+1. Software livre e de c?digo aberto
+$~$
+
+2. Compatibilidade com diversos sistemas operacionais
+$~$
+
+3. Suporta extens?es (pacotes)
+$~$
+
+4. Reprodutibilidade
+$~$
+
+5. Comunidade engajada
+
+
+## R vs. Excel
+
+&nbsp;
+&nbsp;
+
+<center> <img src="gif_hulk2.gif" width = "700px" height="500px" /> </center>
+
+
+## Onde pesquisar?
+
+&nbsp;
+&nbsp;
+
+Caso surja alguma d?vida, seguem abaixo algumas fontes de consulta:
+
+
+<a href="http://r4ds.had.co.nz/index.html">R for Data Science</a> 
+
+<a href="http://www.cookbook-r.com/">Cookbook for R</a>
+
+<a href="http://adv-r.hadley.nz/">Advanced R</a>
+
+<a href="http://pt.stackoverflow.com/">Stackoverflow</a>
+
+<a href="http://www.ufrgs.br/wiki-r/index.php?title=Bem-vindo_%C3%A0_Wiki_R">Wiki R</a>
+
+<a href="http://material.curso-r.com/rbase/">Curso R</a>
+
+<a href="http://cran.r-project.org/doc/contrib/Landeiro-Introducao.pdf">Introdu??o ao R</a>
+
+
+# RStudio
+
+
+## O que ? o RStudio
+&nbsp;
+&nbsp;
+
+<div style="float: left; width: 50%;">
+
+<p style="text-align:center"> <b> R </b> </p>
+
+<center><img src="motor.jpg" width = "60%" height="300px" /></center>
+
+</div>
+
+<div style="float: right; width: 50%;">
+
+<p style="text-align:center"> <b> RStudio </b> </p>
+
+<center><img src="carroceria.jpg" width = "60%" height="300px" /></center>
+
+</div>
+
+## Conhecendo o RStudio
+
+<center><img src="R_1.png" width = "700px" height="500px" /></center>
+
+## Conhecendo o RStudio
+
+<center><img src="R_2.png" width = "700px" height="500px" /></center>
+
+## Conhecendo o RStudio
+
+<center><img src="R_3.png" width = "700px" height="500px" /></center>
+
+#Primeiros passos no R
+
+## Como nos imaginamos ao programar
+
+&nbsp;
+&nbsp;
+
+<div align="center">
+<iframe width="800" height="500" src="https://www.youtube.com/embed/HluANRwPyNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+## Executando c?digos
+&nbsp;
+&nbsp;
+
+Para executar c?digos no RStudio, basta digit?-los na janela "Editor" e apertar o bot?o Run ou utilizar o atalho "Ctrl + enter".
+
+Para executar apenas uma parte espec?fica do c?digo ou mais de uma linha, basta selecionar e depois rodar o c?digo.
+
+<center><img src="executar_codigo.png" width = "500px" height="300px" /></center>
+
+
+## Comentando os c?digos
+&nbsp;
+&nbsp;
+
+? uma boa pr?tica comentar os c?digos criados, sobretudo, as linhas que envolvem opera??es mais complexas. 
+
+Para realizar isso, basta incluir um "#" antes do coment?rio.
+
+
+<center><img src="meme_comentarios.jpg" width = "600px" height="400px" /></center>
+
+## Opera??es Matem?ticas
+
+&nbsp;
+&nbsp;
+
+O R pode ser utilizado como uma calculadora
+
+```{r, class.source="code"}
+1+1 #Soma
+4-2 #Subtra??o
+(3*(2+3))/5 #Multiplica??o e divis?o
+```
+
+
+## Fun??es
+
+&nbsp;
+&nbsp;
+
+O R traz consigo uma s?rie de fun??es que automatizam a execu??o de algumas rotinas. 
+
+Se houver d?vidas a respeito da fun??o, basta digitar help(nome_da_fun??o) ou ?nome_da_fun??o 
+
+A fun??o no R ? sempre um nome acompanhado de par?nteses. Dentro dos par?nteses s?o inseridos os argumentos da fun??o
+
+
+```{r, class.source="code"}
+round(x=45.222, digits=2)
+
+seq(from=0, to=20, by=2)
+```
+
+## Fun??es
+
+&nbsp;
+&nbsp;
+
+Para simplificar a escrita da fun??o, ? poss?vel "passar" direto os valores dos argumentos para a fun??o sem especific?-los, caso eles estejam na ordem correta.
+
+&nbsp;
+&nbsp;
+
+```{r, class.source="code"}
+round(45.222, 2)
+
+seq(0, 20, 2)
+```
+
+## Cria??o de objetos
+
+&nbsp;
+&nbsp;
+
+Para criar objetos no R, devemos utilizar o sinal de atribui??o <-. Para facilitar a digita??o desse sinal, podemos usar o atalho "Alt-".
+
+```{r, class.source="code"}
+x <- 1
+curso <- "EJEF"
+
+x #Executando os objetos
+curso
+```
+
+## Cria??o de objetos
+
+&nbsp;
+&nbsp;
+
+Para a cria??o dos nomes dos objetos, devemos observar algumas regras:
+
+Espa?ar os nomes utilizando: . (ponto), _ (underline), ou caixa alta:
+
+
+* arq.cent
+* arq_cent
+* arqCent
+
+$~$
+Evitar acentos ou caracteres especiais:
+
+* cinc?o
+* cai/xa
+* a?a?
+
+$~$
+Proibido usar nomes reservados: TRUE, FALSE, T, F, etc. (Para checar os nomes reservados, usar ?reserved)
+
+## Cria??o de objetos
+
+&nbsp;
+&nbsp;
+
+Da mesma forma que o R nos permite conduzir opera??es matem?ticas, tamb?m ? poss?vel realizar opera??es utilizando os pr?prios objetos j? criados
+
+```{r, class.source="code"}
+x <- 5
+y <- 10.2
+z <- x+y
+x*y
+y/x
+```
+
+
+## Cria??o de objetos
+
+&nbsp;
+&nbsp;
+
+Quando os objetos s?o criados, eles aparecem no "Global Environment" ou ambiente
+
+<center><img src="criacao_objetos.png" width = "80%" height="400px" /></center>
+
+## Removendo objetos
+
+&nbsp;
+&nbsp;
+
+? poss?vel visualizar os objetos que est?o carregados no ambiente com a fun??o ls() e remov?-los usando rm()
+
+```{r, class.source="code"}
+ls()
+rm(x)
+ls() #Aparecer?o todos os objetos menos x
+rm(list=ls()) #Para remover todos os objetos
+ls()
+```
+
+## Estruturas dos objetos
+
+&nbsp;
+&nbsp;
+
+```{r include=FALSE}
+library(kableExtra)
+```
+
+
+```{r echo=FALSE}
+x <- data.frame(Estrutura=c("Escalar","Vetor at?mico", "Data frames"),
+                "Defini??o"=c("Basicamente, ? um vetor at?mico com um ?nico elemento",
+                            "? a estrutura mais b?sica do R. Consiste em uma sequ?ncia de elementos de mesmo tipo unidos pela fun??o concatenate c()",
+                            "? a estrutura mais utilizada para se armazenar dados no R. Possui duas dimens?es: linhas e colunas. Em outras palavras, ? a boa e velha planilha do excel"))
+
+kable(x) %>%
+  kable_styling(full_width = T) %>%
+  column_spec(1, bold = T, border_right = T, background = "#FFF8DC", include_thead = TRUE)%>%
+  column_spec(2, width = "30em", background = "#FFF8DC", include_thead = TRUE)
+```
+
+# Estruturas dos objetos
+
+## Vetores At?micos
+
+&nbsp;
+&nbsp;
+
+* Os vetores consistem em uma sequ?ncia de elementos que s?o agrupados pela fun??o concatenate c(). 
+
+```{r, class.source="code"}
+x <- c(1,2,4,6,50,3,4,23,12)
+x 
+y <- c("Ejef", "TJMG", "GEARQ", "DIRGED")
+y
+```
+
+## Tipo de vetores
+
+&nbsp;
+&nbsp;
+
+Os vetores podem ser de tipos (ou classes) diferentes:
+
+* Numeric: 2,3.56,7.10,20
+
+* Integer: 1,2,3,4,5,6
+
+* Character: "TJMG", "DIRGED"
+
+* Logical: TRUE ou FALSE
+
+
+Para conferir o tipo de um vetor, basta usar a fun??o class()
+
+```{r, class.source="code"}
+x <- c("Casa", "Curso")
+class(x)
+```
+
+## Tipo de vetores
+
+&nbsp;
+&nbsp;
+
+Os vetores n?o podem possuir mais de um tipo. Dessa maneira, se for criado um vetor com mais de um tipo, ele se converter? automaticamente ao tipo mais gen?rico:
+
+* Character > numeric > integer > logical
+
+```{r, class.source="code"}
+
+x <- c(1,4, TRUE,TRUE,FALSE)
+x
+y <- c("EJEF", 1, 4, 5)
+y
+```
+
+
+## Tipo de vetores
+
+&nbsp;
+&nbsp;
+
+Al?m dessa convers?o autom?tica, ? poss?vel for?ar os vetores a assumirem um determinado tipo usando as fun??es as.()
+
+```{r, class.source="code"}
+x <- c(TRUE,TRUE,FALSE)
+as.numeric(x)
+y <- c(1,4,5,7,7,8)
+as.character(y)
+z <- c("EJEF", "TJMG", "DIRGED")
+as.numeric(z)
+```
+
+## Criando vetores com fun??es
+
+&nbsp;
+&nbsp;
+
+Ao inv?s de digitar um n?mero de cada vez, existem algumas fun??es que facilitam a cria??o de vetores num?ricos
+
+```{r, class.source="code"}
+
+x <- c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20)
+
+x <- 1:20
+
+x <- seq(from=1, to=20)
+
+y <- c("EJEF", "DIRGED", "EJEF", "DIRGED", "EJEF",
+       "DIRGED", "EJEF", "DIRGED", "EJEF", "DIRGED")
+
+y <- rep(c("EJEF", "DIRGED"), times=5)
+
+```
+
+## Opera??es com vetores 
+
+&nbsp;
+&nbsp;
+
+Assim como realizamos contas matem?ticas com grandezas escalares, tamb?m ? poss?vel fazer o mesmo com vetores:
+
+```{r, class.source="code"}
+x <- seq(from=4,to=50,by=1.4)
+x*2
+sum(x)
+mean(x)
+```
+
+## Opera??es com vetores
+
+&nbsp;
+&nbsp;
+
+A maior parte das fun??es do R s?o "vetorizadas", isto ?, elas se aplicam a vetores:
+
+```{r include = FALSE}
+library(tidyverse)
+```
+
+```{r, class.source="code"}
+x <- c("TJMG - EJEF", "TJMG - DIRDEP", "TJSP - COARQ")
+str_split("TJMG - coarq", pattern = " - ", simplify = T)
+str_split(x,pattern = " - ", simplify = T )
+```
+
+## Manipulando vetores
+
+&nbsp;
+&nbsp;
+
+Para se identificar um elemento dentro do vetor, deve-se usar colchetes [] e incluir dentro deles a posi??o desejada
+
+```{r, class.source="code"}
+x <- c("EJEF", "DIRDEP", "COARQ", "COVAD")
+x[2]
+x[2:4]
+x[c(1,3)]
+x[c(TRUE,FALSE,TRUE, FALSE)] #Vetor Booleano
+```
+
+
+## Manipulando vetores
+
+&nbsp;
+&nbsp;
+
+Podemos tamb?m excluir elementos de um vetor, incluindo um sinal negativo antes da posi??o dentro dos colchetes:
+
+```{r, class.source="code"}
+x <- c("EJEF", "DIRDEP", "COARQ", "COVAD")
+x[-2]
+x[-(2:4)]
+x[-c(1,3)]
+```
+
+
+## Manipulando vetores
+
+&nbsp;
+&nbsp;
+
+Para unir dois vetores ou acrescentar novas informa??es, basta usar novamente a fun??o c()
+
+```{r, class.source="code"}
+x <- c(1,2,3,4,5)
+y <- c(6,7,8,9,10)
+z <- c(x,y)
+z
+k <- c(x,y,11,12,13,14,15)
+k
+```
+
+## Data Frames (ou tabelas)
+
+&nbsp;
+&nbsp;
+
+Os Data Frames s?o tabelas que cont?m linhas e colunas. Para cri?-las, devemos usar a fun??o data.frame
+
+```{r, class.source="code"}
+x <- data.frame(Servidor=c("Lucas", "Daniela", "Maric?lia",
+                           "Lorrany", "Bruno", "Vantuir",
+                           "Fernando", "Andr?"),
+                Setor=c("Covad", "Gearq", "Covad", "Gearq",
+                        "Gearq", "Covad", "Dirged", "Dirged"),
+                Dia_aniversario=c(28,15,13,22,27,12,31,2),
+                stringsAsFactors = F)
+```
+
+
+## Visualizando Data frames
+
+&nbsp;
+&nbsp;
+
+? poss?vel visualizar o Data Frame criado de diversas formas:
+
+* Head(x,n=2)
+
+* Tail(x, n=3)
+
+* View(x)
+
+* str(x)
+
+* ncol(x)
+
+* nrow(x)
+
+## Manipulando Data Frames
+
+&nbsp;
+&nbsp;
+
+* Similar aos vetores, para identificar elementos dentro de um Data Frame, devemos utilizar colchetes [].
+
+* No entanto, no caso dos Data Frames, os colchetes devem ser supridos com duas informa??es, uma para a linha e a outra para a coluna. 
+
+* A informa??o da linha deve vir antes da v?rgula e a da coluna ap?s.
+
+<center><img src="linha_coluna.png" width = "300px" height="200px" /></center>
+
+
+## Manipulando Data Frames
+
+&nbsp;
+&nbsp;
+
+```{r, class.source="code"}
+x[4,3] #Dia de anivers?rio da Lorrany
+x[6,2] #Setor do Vantuir
+x[1:4,1] #Selecionando m?ltiplas linhas
+```
+
+## Manipulando Data Frames
+
+&nbsp;
+&nbsp;
+
+```{r, class.source="code"}
+x[c(1,3),2:3] #Selecionando m?ltiplas linhas e colunas
+x[,2] #Selecionando uma coluna inteira
+x[1,] #Selecionando uma linha inteira
+```
+
+## Manipulando Data Frames
+
+&nbsp;
+&nbsp;
+
+Para eliminar linhas ou colunas, o procedimento ? id?ntico ao dos vetores. Basta incluir um sinal negativo na frente da posi??o.
+
+```{r, class.source="code"}
+x[-(1:6),]
+x[1:2, -3]
+```
+
+## Manipulando Data Frames
+
+&nbsp;
+&nbsp;
+
+As colunas do Data Frame podem ser selecionadas a partir do s?mbolo $
+
+```{r, class.source="code"}
+x$Servidor
+
+x$Setor[4]
+```
+
+
+## Manipulando Data Frames
+
+&nbsp;
+&nbsp;
+
+? poss?vel tamb?m "filtrar" o Data Frame a partir dos conte?dos da pr?pria tabela
+
+```{r, class.source="code"}
+x[x$Setor=="Covad",]
+```
+
+Entendendo o filtro:
+
+```{r, class.source="code"}
+x$Setor=="Covad"
+```
+
+
+## Unindo Data Frames
+
+&nbsp;
+&nbsp;
+
+? poss?vel unir novas linhas e colunas ao Data Frame utilizando as fun??es Rbind e Cbind:
+
+```{r, class.source="code"}
+cargo <- c("T?cnico Judici?rio", "Oficial Judici?rio", "T?cnico Judici?rio",
+           "Oficial Judici?rio", "T?cnico Judici?rio", "Oficial Judici?rio",
+           "T?cnico Judici?rio", "Oficial Judici?rio")
+
+x <- cbind(x, cargo) #Sobrescrevendo X, colocando a coluna cargo ? esquerda das j? existentes
+
+#str(x)
+
+y <- c("Simone", "Gedoc", "15", "Oficial Judici?rio")
+
+x <- rbind(x, y) #Sobrescrevendo x, colocando a linha y abaixo das j? existentes
+
+#View(x)
+```
