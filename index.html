@@ -493,14 +493,21 @@ document.getElementsByTagName('head')[0].appendChild(style);
     <h2 class="author">Lucas Fernandes de Magalhães</h2>
 </section>
 
-<section id="o-que-e-o-r" class="slide level2">
+<section><section id="apresentacao-do-curso" class="titleslide slide level1"><h1>Apresentação do Curso</h1></section><section id="orientacoes-iniciais" class="slide level2">
+<h2>Orientações iniciais</h2>
+</section><section id="motivacao" class="slide level2">
+<h2>Motivação</h2>
+</section><section id="desenvolvimento-do-curso" class="slide level2">
+<h2>Desenvolvimento do Curso</h2>
+<p>Fundamentos - manipulação de dados - visualização de dados - Projeto</p>
+</section></section>
+<section><section id="por-que-usar-a-linguagem-r" class="titleslide slide level1"><h1>Por que usar a linguagem R?</h1></section><section id="o-que-e-o-r" class="slide level2">
 <h2>O que é o R?</h2>
 <p>   </p>
 <p>O R é uma linguagem de programação voltada, sobretudo, para a estatística e produção de gráficos. No nosso caso, utilizaremos essa linguagem para a automatização de rotinas.</p>
 <p><span class="math inline">\(~\)</span></p>
 <p>E o que é uma linguagem de programação? De maneira superficial, é um conjunto de regras semânticas e sintáticas (uma linguagem, portanto) que nos permite passar instruções para um computador.</p>
-</section>
-<section id="vantagens-de-se-utilizar-o-r" class="slide level2">
+</section><section id="vantagens-de-se-utilizar-o-r" class="slide level2">
 <h2>Vantagens de se utilizar o R</h2>
 <p>   </p>
 <ol type="1">
@@ -510,8 +517,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <li><p>Reprodutibilidade <span class="math inline">\(~\)</span></p></li>
 <li><p>Comunidade engajada</p></li>
 </ol>
-</section>
-<section id="r-vs.excel" class="slide level2">
+</section><section id="r-vs.excel" class="slide level2">
 <h2>R vs. Excel</h2>
 <p>   </p>
 <div style="float: left; width: 50%;">
@@ -520,8 +526,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </center>
 </div>
 <p><img src="index_files/figure-revealjs/unnamed-chunk-1-1.png" width="768" /></p>
-</section>
-<section id="onde-pesquisar" class="slide level2">
+</section><section id="onde-pesquisar" class="slide level2">
 <h2>Onde pesquisar?</h2>
 <p>   </p>
 <p>Caso surja alguma dúvida, seguem abaixo algumas fontes de consulta:</p>
@@ -532,7 +537,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <p><a href="http://www.ufrgs.br/wiki-r/index.php?title=Bem-vindo_%C3%A0_Wiki_R">Wiki R</a></p>
 <p><a href="http://material.curso-r.com/rbase/">Curso R</a></p>
 <p><a href="http://cran.r-project.org/doc/contrib/Landeiro-Introducao.pdf">Introdução ao R</a></p>
-</section>
+</section></section>
 <section><section id="rstudio" class="titleslide slide level1"><h1>RStudio</h1></section><section id="o-que-e-o-rstudio" class="slide level2">
 <h2>O que é o RStudio</h2>
 <p>   </p>
@@ -555,25 +560,26 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </section><section id="conhecendo-o-rstudio" class="slide level2">
 <h2>Conhecendo o RStudio</h2>
 <center>
-<img src="R_1.png" width = "700px" height="500px" />
+<img src="r1.png" width = "700px" height="500px" />
 </center>
 </section><section id="conhecendo-o-rstudio-1" class="slide level2">
 <h2>Conhecendo o RStudio</h2>
 <center>
-<img src="R_2.png" width = "700px" height="500px" />
+<img src="r2.png" width = "700px" height="500px" />
 </center>
 </section><section id="conhecendo-o-rstudio-2" class="slide level2">
 <h2>Conhecendo o RStudio</h2>
 <center>
-<img src="R_3.png" width = "700px" height="500px" />
+<img src="r3.png" width = "700px" height="500px" />
 </center>
 </section></section>
 <section><section id="primeiros-passos-no-r" class="titleslide slide level1"><h1>Primeiros passos no R</h1></section><section id="como-nos-imaginamos-ao-programar" class="slide level2">
 <h2>Como nos imaginamos ao programar</h2>
 <p>   </p>
 <div align="center">
-<iframe width="800" height="500" src="https://www.youtube.com/embed/HluANRwPyNo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+<video width="800px" height="700px" controls>
+<source src="people.mp4" type="video/mp4">
+</video>
 </div>
 </section><section id="executando-codigos" class="slide level2">
 <h2>Executando códigos</h2>
@@ -581,7 +587,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <p>Para executar códigos no RStudio, basta digitá-los na janela “Editor” e apertar o botão Run ou utilizar o atalho “Ctrl + enter”.</p>
 <p>Para executar apenas uma parte específica do código ou mais de uma linha, basta selecionar e depois rodar o código.</p>
 <center>
-<img src="executar_codigo.png" width = "500px" height="300px" />
+<img src="executarcodigo.png" width = "500px" height="300px" />
 </center>
 </section><section id="comentando-os-codigos" class="slide level2">
 <h2>Comentando os códigos</h2>
@@ -664,7 +670,7 @@ x<span class="op">*</span>y</code></pre></div>
 <p>   </p>
 <p>Quando os objetos são criados, eles aparecem no “Global Environment” ou ambiente</p>
 <center>
-<img src="criacao_objetos.png" width = "80%" height="400px" />
+<img src="criacaoobjetos.png" width = "80%" height="400px" />
 </center>
 </section><section id="removendo-objetos" class="slide level2">
 <h2>Removendo objetos</h2>
@@ -881,7 +887,7 @@ k</code></pre></div>
 <li><p>A informação da linha deve vir antes da vírgula e a da coluna após.</p></li>
 </ul>
 <center>
-<img src="linha_coluna.png" width = "300px" height="200px" />
+<img src="linhacoluna.png" width = "300px" height="200px" />
 </center>
 </section><section id="manipulando-data-frames-1" class="slide level2">
 <h2>Manipulando Data Frames</h2>
