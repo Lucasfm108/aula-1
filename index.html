@@ -738,13 +738,13 @@ x </code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r code"><code class="sourceCode r">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Ejef&quot;</span>, <span class="st">&quot;TJMG&quot;</span>, <span class="st">&quot;GEARQ&quot;</span>, <span class="st">&quot;DIRGED&quot;</span>)
 y</code></pre></div>
 <pre><code>## [1] &quot;Ejef&quot;   &quot;TJMG&quot;   &quot;GEARQ&quot;  &quot;DIRGED&quot;</code></pre>
-</section><section id="tipo-de-vetores" class="slide level2">
-<h2>Tipo de vetores</h2>
+</section><section id="tipos-de-vetores" class="slide level2">
+<h2>Tipos de vetores</h2>
 <p>   </p>
 <p>Os vetores podem ser de tipos (ou classes) diferentes:</p>
 <ul>
-<li><p>Numeric: 2,3.56,7.10,20</p></li>
-<li><p>Integer: 1,2,3,4,5,6</p></li>
+<li><p>Numeric: 2;3.56;7.10;20</p></li>
+<li><p>Integer: 1;2;3;4;5;6</p></li>
 <li><p>Character: “TJMG”, “DIRGED”</p></li>
 <li><p>Logical: TRUE ou FALSE</p></li>
 </ul>
@@ -752,7 +752,7 @@ y</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r code"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Casa&quot;</span>, <span class="st">&quot;Curso&quot;</span>)
 <span class="kw">class</span>(x)</code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-</section><section id="tipo-de-vetores-1" class="slide level2">
+</section><section id="tipo-de-vetores" class="slide level2">
 <h2>Tipo de vetores</h2>
 <p>   </p>
 <p>Os vetores não podem possuir mais de um tipo. Dessa maneira, se for criado um vetor com mais de um tipo, ele se converterá automaticamente ao tipo mais genérico:</p>
@@ -765,7 +765,7 @@ x</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r code"><code class="sourceCode r">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;EJEF&quot;</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">5</span>)
 y</code></pre></div>
 <pre><code>## [1] &quot;EJEF&quot; &quot;1&quot;    &quot;4&quot;    &quot;5&quot;</code></pre>
-</section><section id="tipo-de-vetores-2" class="slide level2">
+</section><section id="tipo-de-vetores-1" class="slide level2">
 <h2>Tipo de vetores</h2>
 <p>   </p>
 <p>Além dessa conversão automática, é possível forçar os vetores a assumirem um determinado tipo usando as funções as.()</p>
@@ -822,7 +822,7 @@ x<span class="op">*</span><span class="dv">2</span></code></pre></div>
 </section><section id="manipulando-vetores" class="slide level2">
 <h2>Manipulando vetores</h2>
 <p>   </p>
-<p>Para se identificar um elemento dentro do vetor, deve-se usar colchetes [] e incluir dentro deles a posição desejada</p>
+<p>Para se identificar um elemento dentro do vetor, deve-se usar colchetes <a href="#/section"></a> e incluir dentro deles a posição desejada</p>
 <div class="sourceCode"><pre class="sourceCode r code"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;EJEF&quot;</span>, <span class="st">&quot;DIRDEP&quot;</span>, <span class="st">&quot;COARQ&quot;</span>, <span class="st">&quot;COVAD&quot;</span>)
 x[<span class="dv">2</span>]</code></pre></div>
 <pre><code>## [1] &quot;DIRDEP&quot;</code></pre>
@@ -882,7 +882,7 @@ k</code></pre></div>
 <h2>Manipulando Data Frames</h2>
 <p>   </p>
 <ul>
-<li><p>Similar aos vetores, para identificar elementos dentro de um Data Frame, devemos utilizar colchetes [].</p></li>
+<li><p>Similar aos vetores, para identificar elementos dentro de um Data Frame, devemos utilizar colchetes <a href="#/section"></a>.</p></li>
 <li><p>No entanto, no caso dos Data Frames, os colchetes devem ser supridos com duas informações, uma para a linha e a outra para a coluna.</p></li>
 <li><p>A informação da linha deve vir antes da vírgula e a da coluna após.</p></li>
 </ul>
@@ -974,7 +974,7 @@ x &lt;-<span class="st"> </span><span class="kw">rbind</span>(x, y) <span class=
 <p>   </p>
 <ul>
 <li><p>Quando aparece uma mensagem de <em>Warning</em>, isso significa que o código foi executado, mas que, provavelmente, o resultado não é aquilo que se deseja</p></li>
-<li><p>Quando aparece uma mensagem de <em>Error</em>, o código não chega nem a ser executado</p></li>
+<li><p>Quando aparece uma mensagem de <em>Error</em>, o código não chega a ser executado</p></li>
 </ul>
 </section><section id="dois-tipos-de-avisos-1" class="slide level2">
 <h2>Dois tipos de avisos</h2>
@@ -1003,6 +1003,11 @@ b &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot
 <img src="error.png" width = "100%" height="400px" />
 </center>
 </div>
+</section><section id="section" class="slide level2">
+<h2></h2>
+<center>
+<img src="memes2.jpg" width = "700px" height="600px" />
+</center>
 </section></section>
     </div>
   </div>

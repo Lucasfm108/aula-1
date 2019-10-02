@@ -354,16 +354,16 @@ y <- c("Ejef", "TJMG", "GEARQ", "DIRGED")
 y
 ```
 
-## Tipo de vetores
+## Tipos de vetores
 
 &nbsp;
 &nbsp;
 
 Os vetores podem ser de tipos (ou classes) diferentes:
 
-* Numeric: 2,3.56,7.10,20
+* Numeric: 2;3.56;7.10;20
 
-* Integer: 1,2,3,4,5,6
+* Integer: 1;2;3;4;5;6
 
 * Character: "TJMG", "DIRGED"
 
@@ -674,7 +674,7 @@ Existem dois tipos de avisos no R: **WARNING** e **ERROR**.
 
 * Quando aparece uma mensagem de *Warning*, isso significa que o código foi executado, mas que, provavelmente, o resultado não é aquilo que se deseja
 
-* Quando aparece uma mensagem de *Error*, o código não chega nem a ser executado
+* Quando aparece uma mensagem de *Error*, o código não chega a ser executado
 
 ## Dois tipos de avisos
 
@@ -709,3 +709,6 @@ mean(d)
 
 </div>
 
+## 
+
+<center> <img src="memes2.jpg" width = "700px" height="600px" /> </center>
